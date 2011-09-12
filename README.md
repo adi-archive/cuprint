@@ -1,10 +1,8 @@
-README
-================================================================================
+# CUPrint
 
 A project to make printing at Columbia University super-duper easy
 
-WISH LIST
-================================================================================
+# WISH LIST
 
  - Drag-n-drop!
  - Android interface!
@@ -15,4 +13,14 @@ WISH LIST
  - Autocomplete UNIs? Only 8000 undergrads, prefix sharing should be usefully low
  - Geolocate (ish?) to estimate nearest printer
 
+# Current Status
 
+ - Basic functionality implemented. 
+ - Can specify printer and UNI.
+ - Can enter # of copies and page ranges.
+ - Only supports file formats supported natively by CUPS 
+   (i.e. PostScript, PDF, and Image Formats).
+
+# Dependencies
+ - Flask
+ - PyCUPS
