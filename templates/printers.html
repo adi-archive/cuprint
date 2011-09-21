@@ -1,18 +1,40 @@
 {% extends "base.html" %}
 
 {% block body %}
-	<form action="../print" method="post" enctype="multipart/form-data">
-		<p>Enter UNI: <input type="text" name="uni"/></p>
-		<p>Select Printer: 
-		<select name="printer">
-		{% for prt in printers %}
-			<option value="{{prt}}">{{prt}}</option>
-		{% endfor %}
-		</select>
-		</p>
-		<p>Upload File: <input type="file" name="document"/></p>
-		<p># of Copies: <input type="text" name="copies" value="1"/></p>
-		<p>Page Ranges: <input type="text" name="page-ranges" value="all"/></p>
-		<p><input type="submit" value="Print!"/></p>
+	<h2>Printing to {{building}}.</h2>
+	<form action="../print" method="post" enctype="multipart/form-data" class="printform">
+	<fieldset>
+		<legend>Set Print Options</legend>
+		<ol>
+			<li>
+				<label for="uni">UNI</label>
+				<input type="text" id="uni" name="uni"/>
+				<small>e.g. abc1234</small>
+			</li>
+			<li>
+				<label for="printer">Printer</label>
+				<select id="printer" name="printer">
+				{% for prt in printers %}
+					<option value="{{prt}}">{{prt}}</option>
+				{% endfor %}
+				</select>
+			</li>
+			<li>
+				<label for="document">File</label>
+				<input type="file" id="document" name="document"/>
+				<small>.pdf or .ps</small>
+			</li>
+			<li>
+				<label for="copies">Copies</label>
+				<input type="text" id="copies" name="copies" value="1"/>
+			</li>
+			<li>
+				<label for="page-ranges">Pages</label>
+				<input type="text" id="page-ranges" name="page-ranges" value="all"/>
+				<small>e.g. 1-2, 5</small>
+			</li>
+		</ol>
+	</fieldset>
+	<button type="submit" value="Print!">Print!</button>
 	</form>
 {% endblock %}

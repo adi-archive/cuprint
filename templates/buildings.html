@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block body %}
-	<p>Choose a building.</p>
+	<h2>Choose a building.</h2>
+    <ul id="buildings">
 	{% for building in buildings %}
-		<p><a href="{{building|slugify}}/print">{{building}}</a></p>
+		<li><a href="{{building|slugify}}/print">{{building}}</a></li>
 	{% endfor %}
+    </ul>
 {% endblock %}

@@ -1,0 +1,126 @@
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+}
+
+body div {
+    width: 60%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #fff;
+    background-color: #6586BA;
+    margin: 0 0 1em 0;
+    display: block;
+    width: 100%;
+    padding: .25em 0;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 1em;
+}
+
+ul {
+    list-style-type: none;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    height: 22em;
+    padding: 0;
+    margin-left: -.5em;
+}
+
+li {
+    padding: .5em 0;
+}
+
+a, a:visited {
+    color: #333;
+    text-decoration: none;
+    padding: .5em;
+}
+
+a:hover {
+    color: #fff;
+    background-color: #6586BA;
+}
+
+/* Form styles based on 
+    http://www.alistapart.com/articles/prettyaccessibleforms/
+*/
+form.printform fieldset {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+form.printform legend {
+  padding: 0 2px;
+  font-weight: bold;
+}
+
+form.printform label {
+  display: inline-block;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+form.printform fieldset ol {
+  margin: 0;
+  padding: 0;
+}
+
+form.printform fieldset li {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+form.printform fieldset fieldset {
+  border: none;
+  margin: 3px 0 0;
+}
+
+form.printform fieldset fieldset legend {
+  padding: 0 0 5px;
+  font-weight: normal;
+}
+
+form.printform fieldset fieldset label {
+  display: block;
+  width: auto;
+}
+
+form.printform em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+
+form.printform label {
+  width: 120px; /* Width of labels */
+}
+
+form.printform fieldset fieldset label {
+  margin-left: 123px; /* Width plus 3 (html space) */
+}
+
+form.printform button {
+    width: 100%;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #6586BA;
+}
+
+form.printform small {
+    line-height: 1.5;
+    float: right;
+    color: #666;
+    font-size: .75em;
+}

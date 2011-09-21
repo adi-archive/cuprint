@@ -30,7 +30,9 @@ def print_file(f):
 	except cups.IPPError:
 		return False
 
-# Example route, delete this and add your own
+def unslugify(value):
+	return ' '.join([s.capitalize() for s in value.split('-')])
+
 @app.route('/')
 def index():
 	return render_template('buildings.html', buildings=app.config['BUILDINGS'])
@@ -38,7 +40,7 @@ def index():
 @app.route('/<building>/print')
 def print_form(building):
 	printers = app.config['PRINTERS'][building]
-	return render_template('printers.html', printers=printers)
+	return render_template('printers.html', building=unslugify(building), printers=printers)
 	
 @app.route('/print', methods=['POST'])
 def handle_print():
