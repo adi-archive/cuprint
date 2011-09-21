@@ -24,3 +24,7 @@ A project to make printing at Columbia University super-duper easy
 # Dependencies
  - Flask
  - PyCUPS
+
+# Usage
+
+ - To start the server, use `./manage.py runapp`. 

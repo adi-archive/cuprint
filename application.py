@@ -5,6 +5,7 @@ import cPickle as pickle
 import os
 from werkzeug import secure_filename
 import cups
+import sys
 
 app = Flask(__name__)
 app.config.from_object(settings)
@@ -21,7 +22,7 @@ def print_file(f):
 	tmp_file = os.path.join(app.config['UPLOAD_DIR'], filename)
 	f.save(tmp_file)
 	options={'copies':str(request.form['copies'])}
-	if request.form['page-ranges'] != 'all':
+	if request.form['page-ranges']:
 		options['page-ranges'] = str(request.form['page-ranges'])
 	cups.setUser(request.form['uni'])
 	conn = cups.Connection()
