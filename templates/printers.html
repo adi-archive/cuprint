@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block body %}
-	<h2>Printing to {{building}}.</h2>
+	<h2>Printing to {{building|unslugify}}.</h2>
 	<form action="../print" method="post" enctype="multipart/form-data" class="printform">
 	<fieldset>
 		<legend>Set Print Options</legend>
