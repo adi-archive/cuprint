@@ -7,8 +7,8 @@
     <link href="/static/main.css" rel="stylesheet" type="text/css"/>
     {% endblock %}
   </head>
-  <body>
-  <h1>cuprint</h1>
+  <body id="{% block pageid %}{% endblock %}">
+  <h1><a href="/">cuprint</a></h1>
   <div>
   {% block body %}
   {% endblock %}

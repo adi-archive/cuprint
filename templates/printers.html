@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block pageid %}printer{% endblock %}
 {% block body %}
 	<h2>Printing to {{building|unslugify}}.</h2>
 	<form action="../print" method="post" enctype="multipart/form-data" class="printform">
@@ -9,6 +9,7 @@
 			<li>
 				<label for="uni">UNI</label>
 				<input type="text" id="uni" name="uni"/>
+				<br />
 				<small>e.g. abc1234</small>
 			</li>
 			<li>
@@ -22,6 +23,7 @@
 			<li>
 				<label for="document">File</label>
 				<input type="file" id="document" name="document"/>
+				<br />
 				<small>.pdf or .ps</small>
 			</li>
 			<li>
@@ -31,10 +33,11 @@
 			<li>
 				<label for="page-ranges">Pages</label>
 				<input type="text" id="page-ranges" name="page-ranges" />
+				<br />
 				<small>e.g. 1-2,5 (leave blank to print all pages)</small>
 			</li>
 		</ol>
 	</fieldset>
-	<button type="submit" value="Print!">Print!</button>
+	<button type="submit">Print!</button>
 	</form>
 {% endblock %}
