@@ -2,16 +2,6 @@
 
 import sys, os
 from application import app
-import json
-import cPickle as pickle
-
-def setup_redis():
-	r = redis.Redis()
-	with open('printers.json') as f:
-		printers = json.load(f)
-		for key in printers:
-			val = pickle.dumps(printers[key])
-			r.hset('printers', key, val)
 
 def runapp():
 	'''Start the development server'''

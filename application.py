@@ -2,7 +2,6 @@ from flask import Flask, session, request, render_template, redirect
 import settings
 from filters import filters
 from helpers import *
-import cPickle as pickle
 import os
 import cups
 import sys
