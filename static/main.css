@@ -51,6 +51,14 @@ a:hover {
     background-color: #6586BA;
 }
 
+h1 a, h1 a:visited {
+	color: #fff;
+}
+
+h1 a:hover {
+	color: #333;
+}
+
 /* Form styles based on 
     http://www.alistapart.com/articles/prettyaccessibleforms/
 */
