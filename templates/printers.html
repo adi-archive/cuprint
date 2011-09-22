@@ -1,8 +1,12 @@
 {% extends "base.html" %}
+{% block init %}
+{{super()}}
+<script type="text/javascript" src="/static/validator.js"></script>
+{% endblock %}
 {% block pageid %}printer{% endblock %}
 {% block body %}
 	<h2>Printing to {{building|unslugify}}.</h2>
-	<form action="../print" method="post" enctype="multipart/form-data" class="printform">
+	<form action="/print" method="post" enctype="multipart/form-data" class="printform" onsubmit="return validate_print_form(this);">
 	<fieldset>
 		<legend>Set Print Options</legend>
 		<ol>

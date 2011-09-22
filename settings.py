@@ -51,6 +51,5 @@ UPLOAD_DIR='/tmp/cuprint'
 if not os.path.isdir(UPLOAD_DIR):
 	os.mkdir(UPLOAD_DIR)
 	
-ALLOWED_EXTENSIONS=['pdf','ps','jpg','png','gif']
 
 
