@@ -1,54 +1,71 @@
 html {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 20px;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-size: 20px;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 body div {
-    width: 60%;
-    margin: 0 auto;
+  width: 400px;
+  margin: 0 auto;
+}
+
+body#printer div {
+  width: 420px;
 }
 
 h1 {
-    color: #fff;
-    background-color: #6586BA;
-    margin: 0 0 1em 0;
-    display: block;
-    width: 100%;
-    padding: .25em 0;
-    text-align: center;
+  color: #fff;
+  background-color: #6586BA;
+  margin: 0 0 1em 0;
+  text-align: center;
 }
 
 h2 {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
-ul {
-    list-style-type: none;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    height: 22em;
-    padding: 0;
-    margin-left: -.5em;
+#buildings ul {
+  list-style-type: none;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  height: 22em;
+  padding: 0;
+  margin-left: -.5em;
 }
 
-li {
-    padding: .5em 0;
+#buildings li {
+  width: 200px;
+  height: 2.1em;
 }
+
 
 a, a:visited {
-    color: #333;
-    text-decoration: none;
-    padding: .5em;
+  color: #333;
+  text-decoration: none;
+  padding: .5em;
+  width: 200px;
+  display: block;
 }
 
 a:hover {
-    color: #fff;
-    background-color: #6586BA;
+  color: #fff;
+  background-color: #6586BA;
+}
+
+h1 a, h1 a:visited {
+  color: #fff;
+  display: block;
+  width: 100%;
+  padding: .25em 0;
+}
+
+h1 a:hover {
+  color: #333;
+  background-color: none;
 }
 
 h1 a, h1 a:visited {
@@ -74,8 +91,9 @@ form.printform legend {
 
 form.printform label {
   display: inline-block;
-  line-height: 1.5;
+  line-height: 1.0;
   vertical-align: top;
+  padding-top: 3px;
 }
 
 form.printform fieldset ol {
@@ -118,17 +136,34 @@ form.printform fieldset fieldset label {
   margin-left: 123px; /* Width plus 3 (html space) */
 }
 
+form.printform input {
+  height: 16px;
+  font-size: 12px;
+  width: 170px;
+}
+
 form.printform button {
-    width: 100%;
-    font-size: 1.25em;
-    font-weight: bold;
-    color: #fff;
-    background-color: #6586BA;
+  width: 100%;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #6586BA;
+  border: 3px solid #ccc;
+  border-style: outset;
+  -moz-border-radius:     10px;
+  -webkit-border-radius:  10px;
+  border-radius:          10px;
+}
+
+form.printform button:active {
+  background-color: #666;
+  border: 3px solid #ccc;
+  border-style: inset;
 }
 
 form.printform small {
-    line-height: 1.5;
-    float: right;
-    color: #666;
-    font-size: .75em;
+  margin: 0 0 0 130px;
+  color: #666;
+  font-size: .6em;
+  width: 250px;
 }
