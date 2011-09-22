@@ -39,10 +39,10 @@ PRINTERS={
 	"burke": ["burke100a", "burke300a"]
 }
 
-BUILDINGS=["Dodge", "Lerner", "Statistics", "Mudd", "Avery", "Math", 
-	"Philosophy", "Medical Center", "International Affairs", "Lewisohn", 
-	"Watson", "Career Services", "Schermerhorn", "Residence Halls", "Butler", 
-	"Social Work", "Kent", "Uris", "Burke", "Barnard"]
+BUILDINGS=['Avery', 'Barnard', 'Burke', 'Butler', 'Career Services', 'Dodge', 
+	'International Affairs', 'Kent', 'Lerner', 'Lewisohn', 'Math', 
+	'Medical Center', 'Mudd', 'Philosophy', 'Residence Halls', 'Schermerhorn', 
+	'Social Work', 'Statistics', 'Uris', 'Watson']
 
 import os
 
