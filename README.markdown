@@ -9,15 +9,18 @@ A project to make printing at Columbia University super-duper easy
  - Dynamic re-routing!
  - Maybe we could scrape the queue, and figure out if printers get heavily used during certain times
  - We can use rate of add to queue/rate of prints from queue/number of computers occupied in a lab to estimate load on a printer
- - Actually, printers aren't that sexy
  - Autocomplete UNIs? Only 8000 undergrads, prefix sharing should be usefully low
  - Geolocate (ish?) to estimate nearest printer
+ - Pick more than one file
+ - Pick more than one printer (fits with re-routing)
+ - Drop-down menu -> buttons
 
 # Current Status
 
  - Basic functionality implemented. 
  - Can specify printer and UNI.
  - Can enter # of copies and page ranges.
+ - Double sided printing
  - Only supports file formats supported natively by CUPS 
    (i.e. PostScript, PDF, and Image Formats).
 
