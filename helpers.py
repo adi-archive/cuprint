@@ -8,6 +8,8 @@ def print_file(f, form):
 	tmp_file = os.path.join(settings.UPLOAD_DIR, filename)
 	f.save(tmp_file)
 	options={'copies':str(form['copies']), 'sides':str(form['sides'])}
+	if 'Collate' in form and form['Collate']=='collate':
+		options['Collate'] = 'True'
 	if form['page-ranges']:
 		options['page-ranges'] = str(form['page-ranges'])
 	cups.setUser(form['uni'])
