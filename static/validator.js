@@ -9,7 +9,7 @@ function validate_print_form(form){
 	var filere = new RegExp('\\.(pdf)|(ps)');
 
 	if(!filere.test(form.document.value)){
-		alert("Please upload only a PDF or PostScript file.");
+		alert("Please upload a PDF or PostScript file.");
 		return false;
 	}
 
