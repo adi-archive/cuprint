@@ -13,7 +13,7 @@ def print_file(f, form):
 	filename = secure_filename(f.filename)
 	tmp_file = os.path.join(settings.UPLOAD_DIR, filename)
 	f.save(tmp_file)
-	options={'copies':str(form['copies'])}
+	options={'copies':str(form['copies']), 'sides':str(form['sides'])}
 	if form['page-ranges']:
 		options['page-ranges'] = str(form['page-ranges'])
 	cups.setUser(form['uni'])
