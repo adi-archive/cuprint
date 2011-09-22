@@ -24,7 +24,8 @@ def handle_print():
 	f = request.files['document']
 	if file_allowed(f.filename):
 		if print_file(f, request.form):
-			return render_template('success.html')
+			return render_template('success.html', 
+				printer=request.form['printer'])
 		else: redirect('failure.html')
 	return render_template("notallowed.html")
 	
