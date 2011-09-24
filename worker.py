@@ -4,31 +4,7 @@ import os
 import zmq
 import sys
 import json
-
-def deunicode(obj):
-	if isinstance(obj, dict):
-		retval = {}
-		for key, val in obj.items():
-			if(isinstance(key, unicode)):
-				key = str(key)
-			if(isinstance(val, unicode)):
-				val = str(val)
-			elif(isinstance(val, (list,dict))):
-				val = deunicode(val)
-			retval[key] = val
-		return retval
-	elif isinstance(obj, list):
-		retval = []
-		for item in obj:
-			if(isinstance(item, unicode)):
-				retval.append(str(item))
-			elif(isinstance(item, (list,dict))):
-				retval.append(deunicode(item))
-			else: retval.append(item)
-		return retval
-	else:
-		return obj
-
+from helpers import deunicode
 
 def print_file(filename, tmp_file, printer, uni, options):
 	cups.setUser(uni)
