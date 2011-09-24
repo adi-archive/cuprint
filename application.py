@@ -1,7 +1,7 @@
 from flask import Flask, session, request, render_template, redirect
 import settings
 from filters import filters
-from helpers import *
+from helpers import send_job
 import os
 import cups
 import sys
