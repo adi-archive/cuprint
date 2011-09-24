@@ -34,10 +34,14 @@ footer ul li {
   padding: 0 1em;
 }
 
-footer ul li a {
+footer ul li a, footer ul li a:visited {
   display: inline;
   color: #999;
   padding: .5em .5em .25em .5em;
+}
+
+footer ul li a:hover {
+  color: #fff;
 }
 
 h1 {
@@ -52,6 +56,7 @@ h1 {
 h2 {
   margin-top: 1em;
   text-align: center;
+  text-shadow: #eaeaea 2px 2px 2px;
 }
 
 ul#buildings  {
@@ -101,11 +106,13 @@ h1 a, h1 a:visited {
   display: block;
   width: 100%;
   padding: .25em 0;
+  text-shadow: #666 2px 2px 0;
 }
 
 h1 a:hover {
   color: #333;
   background-color: none;
+  text-shadow: #999 -2px -2px 0;
 }
 
 h1 a, h1 a:visited {
@@ -121,9 +128,11 @@ h1 a:hover {
 */
 form.printform {
   margin-bottom: 1.5em;
+  text-align: center;
 }
 
 form.printform fieldset {
+  text-align: left;
   margin-bottom: 10px;
   border: 1px solid #ccc;
 }
@@ -193,22 +202,25 @@ form.printform input[type="checkbox"] {
 }
 
 form.printform button {
-  width: 100%;
+  width: 33%;
   font-size: 1.25em;
   font-weight: bold;
+  line-height: 2em;
   color: #fff;
   background-color: #6586BA;
-  border: 3px solid #ccc;
-  border-style: outset;
-  -moz-border-radius:     10px;
-  -webkit-border-radius:  10px;
-  border-radius:          10px;
+  border: 1px solid #ccc;
+  box-shadow: inset #ccc -2px -2px 0;
+  text-shadow: #444 1px 1px 0;
 }
 
 form.printform button:active {
+  color: #ccc;
   background-color: #666;
-  border: 3px solid #ccc;
-  border-style: inset;
+  box-shadow: inset #333 2px 2px 0;
+  position: relative;
+  top: 2px;
+  left: 2px;
+  text-shadow: #444 -1px -1px 0;
 }
 
 form.printform small {
@@ -217,3 +229,5 @@ form.printform small {
   font-size: .6em;
   width: 250px;
 }
+
+p {line-height: 1.5em;}
