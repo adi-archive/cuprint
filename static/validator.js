@@ -6,7 +6,7 @@ function validate_print_form(form){
 		return false;
 	}
 
-	var filere = new RegExp('\\.(pdf)|(ps)|(doc)|(odt)');
+	var filere = new RegExp('\\.(pdf)|(ps)|(doc)|(odt)|(docx)');
 
 	if(!filere.test(form.document.value)){
 		alert("Please upload a PDF or PostScript file.");
