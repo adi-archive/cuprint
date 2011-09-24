@@ -6,10 +6,32 @@ import sys
 import json
 from helpers import deunicode
 
+def convert_file(filename):
+	newfilename = filename.rsplit('.',1)[0]+'.ps'
+	cmd = 'abiword --to=ps --to-name="%s" "%s"' % (newfilename, filename)
+	os.system(cmd)
+	if os.path.isfile(newfilename):
+		return newfilename
+	return None
+
+def can_print_direct(filename):
+	if '.' not in filename: return False
+	ext = filename.rsplit('.',1)[-1]
+	if ext in settings.DIRECT_PRINT_FORMATS:
+		return True
+	return False
+
 def print_file(filename, tmp_file, printer, uni, options):
 	cups.setUser(uni)
 	conn = cups.Connection()
 	try:
+		if not can_print_direct(tmp_file):
+			conv_file = convert_file(tmp_file)
+			if not conv_file:
+				sys.stderr.write("Could not convert "+tmp_file+" successfully\n")
+				sys.stderr.flush()
+				return
+			tmp_file = conv_file
 		conn.printFile(printer, tmp_file, filename, options)
 		sys.stderr.write('File '+tmp_file+' printed successfully\n')
 		sys.stderr.flush()
