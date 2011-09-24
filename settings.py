@@ -51,5 +51,5 @@ UPLOAD_DIR='/tmp/cuprint'
 if not os.path.isdir(UPLOAD_DIR):
 	os.mkdir(UPLOAD_DIR)
 	
-
+ZMQ_ADDR='tcp://127.0.0.1:5555'
 

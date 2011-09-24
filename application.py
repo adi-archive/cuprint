@@ -22,9 +22,8 @@ def print_form(building):
 @app.route('/print', methods=['POST'])
 def handle_print():
 	f = request.files['document']
-	if print_file(f, request.form):
-		return render_template('success.html', 
+	print_file(f, request.form)
+	return render_template('success.html', 
 			printer=request.form['printer'])
-	else: redirect('failure.html')
 	
 application=app

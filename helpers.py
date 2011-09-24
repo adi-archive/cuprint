@@ -1,7 +1,16 @@
 import settings
-import cups
 from werkzeug import secure_filename
 import os
+import zmq
+import json
+
+context = zmq.Context()
+
+def connect_to_worker():
+	sender = context.socket(zmq.PUSH)
+	sender.connect(settings.ZMQ_ADDR)
+	
+	return sender
 
 def print_file(f, form):
 	filename = secure_filename(f.filename)
@@ -12,10 +21,8 @@ def print_file(f, form):
 		options['Collate'] = 'True'
 	if form['page-ranges']:
 		options['page-ranges'] = str(form['page-ranges'])
-	cups.setUser(form['uni'])
-	conn = cups.Connection()
-	try:
-		return conn.printFile(form['printer'], tmp_file, filename, options)
-	except cups.IPPError:
-		return False
-
+	
+	sender = connect_to_worker()
+	data = json.dumps({'filename': filename, 'tmp_file':tmp_file, 
+		'options':options, 'printer':form['printer'], 'uni':form['uni']})
+	sender.send('print '+data)
