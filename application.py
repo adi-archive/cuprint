@@ -22,7 +22,7 @@ def print_form(building):
 @app.route('/print', methods=['POST'])
 def handle_print():
 	f = request.files['document']
-	print_file(f, request.form)
+	send_job(f, request.form)
 	return render_template('success.html', 
 			printer=request.form['printer'])
 	

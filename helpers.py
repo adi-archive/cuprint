@@ -12,7 +12,7 @@ def connect_to_worker():
 	
 	return sender
 
-def print_file(f, form):
+def send_job(f, form):
 	filename = secure_filename(f.filename)
 	tmp_file = os.path.join(settings.UPLOAD_DIR, filename)
 	f.save(tmp_file)
