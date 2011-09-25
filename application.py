@@ -25,5 +25,17 @@ def handle_print():
 	send_job(f, request.form)
 	return render_template('success.html', 
 			printer=request.form['printer'])
+
+@app.route('/help')
+def show_help():
+	return render_template('help.html')
+
+@app.route('/contact')
+def show_contact():
+	return render_template('contact.html')
+
+@app.route('/terms')
+def show_terms():
+	return render_template('terms.html')
 	
 application=app

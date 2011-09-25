@@ -8,7 +8,7 @@ body {
 }
 
 body div {
-  width: 400px;
+  width: 440px;
   margin: 0 auto;
 }
 
@@ -16,38 +16,74 @@ body#printer div {
   width: 420px;
 }
 
+footer {
+  border-top: 2px solid #6586BA;
+  width: 440px;
+  margin: 1em auto 0 auto;
+}
+
+footer ul {
+  font-size: .75em;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+footer ul li {
+  display: inline-block;
+  padding: 0 1em;
+}
+
+footer ul li a, footer ul li a:visited {
+  display: inline;
+  color: #999;
+  padding: .5em .5em .25em .5em;
+}
+
+footer ul li a:hover {
+  color: #fff;
+}
+
 h1 {
   color: #fff;
   background-color: #6586BA;
   margin: 0 0 1em 0;
   text-align: center;
+  border-bottom: 1px solid #555;
+  box-shadow: #ccc 0 0 20px;
 }
 
 h2 {
   margin-top: 1em;
+  text-align: center;
+  text-shadow: #eaeaea 2px 2px 2px;
 }
 
-#buildings ul {
+ul#buildings  {
   list-style-type: none;
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
-  height: 22em;
+  -webkit-column-gap: 0;
+  -moz-column-gap: 0;
+  column-gap: 0;
+  height: 422px;
   padding: 0;
-  margin-left: -.5em;
+  margin: 0;
+  text-align: center;
 }
 
-#buildings li {
-  width: 200px;
-  height: 2.1em;
+ul#buildings li {
+  height: 40px;
+  width: 220px;
+  padding: 0;
+  margin: 0;
 }
 
 
 a, a:visited {
   color: #333;
   text-decoration: none;
-  padding: .5em;
-  width: 200px;
   display: block;
 }
 
@@ -56,16 +92,27 @@ a:hover {
   background-color: #6586BA;
 }
 
+ul#buildings li a, ul#buildings li a:visited {
+  padding: 0;
+  height: 40px;
+  width: 220px;
+  display: inline-block;
+  line-height: 2;
+  vertical-align: center;
+}
+
 h1 a, h1 a:visited {
   color: #fff;
   display: block;
   width: 100%;
   padding: .25em 0;
+  text-shadow: #666 2px 2px 0;
 }
 
 h1 a:hover {
   color: #333;
   background-color: none;
+  text-shadow: #999 -2px -2px 0;
 }
 
 h1 a, h1 a:visited {
@@ -79,7 +126,13 @@ h1 a:hover {
 /* Form styles based on 
     http://www.alistapart.com/articles/prettyaccessibleforms/
 */
+form.printform {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
 form.printform fieldset {
+  text-align: left;
   margin-bottom: 10px;
   border: 1px solid #ccc;
 }
@@ -142,23 +195,32 @@ form.printform input {
   width: 170px;
 }
 
+form.printform input[type="checkbox"] {
+  margin-left: 0;
+  width: 15px;
+  height: 15px;
+}
+
 form.printform button {
-  width: 100%;
+  width: 33%;
   font-size: 1.25em;
   font-weight: bold;
+  line-height: 2em;
   color: #fff;
   background-color: #6586BA;
-  border: 3px solid #ccc;
-  border-style: outset;
-  -moz-border-radius:     10px;
-  -webkit-border-radius:  10px;
-  border-radius:          10px;
+  border: 1px solid #ccc;
+  box-shadow: inset #ccc -2px -2px 0;
+  text-shadow: #444 1px 1px 0;
 }
 
 form.printform button:active {
+  color: #ccc;
   background-color: #666;
-  border: 3px solid #ccc;
-  border-style: inset;
+  box-shadow: inset #333 2px 2px 0;
+  position: relative;
+  top: 2px;
+  left: 2px;
+  text-shadow: #444 -1px -1px 0;
 }
 
 form.printform small {
@@ -167,3 +229,5 @@ form.printform small {
   font-size: .6em;
   width: 250px;
 }
+
+p {line-height: 1.5em;}

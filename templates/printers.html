@@ -5,55 +5,55 @@
 {% endblock %}
 {% block pageid %}printer{% endblock %}
 {% block body %}
-	<h2>Printing to {{building|unslugify}}.</h2>
-	<form action="/print" method="post" enctype="multipart/form-data" class="printform" onsubmit="return validate_print_form(this);">
-	<fieldset>
-		<legend>Set Print Options</legend>
-		<ol>
-			<li>
-				<label for="uni">UNI</label>
-				<input type="text" id="uni" name="uni"/>
-				<br />
-				<small>e.g. abc1234</small>
-			</li>
-			<li>
-				<label for="printer">Printer</label>
-				<select id="printer" name="printer">
-				{% for prt in printers %}
-					<option value="{{prt}}">{{prt}}</option>
-				{% endfor %}
-				</select>
-			</li>
-			<li>
-				<label for="document">File</label>
-				<input type="file" id="document" name="document"/>
-				<br />
-				<small>.pdf or .ps</small>
-			</li>
-			<li>
-				<label for="copies">Copies</label>
-				<input type="text" id="copies" name="copies" value="1"/>
-			</li>
-    		<li>
-				<label for="Collate">Collate</label>
-				<input type="checkbox" name="Collate" value="collate"/>
-			</li>
-			<li>
-				<label for="page-ranges">Pages</label>
-				<input type="text" id="page-ranges" name="page-ranges" />
-				<br />
-				<small>e.g. 1-2,5 (leave blank to print all)</small>
-			</li>
-			<li>
-				<label for="sides">Sides</label>
-				<select id="sides" name="sides">
-					<option value="two-sided-long-edge">Two-Sided Portrait</option>
-    				<option value="one-sided">One-Sided</option>
-					<option value="two-sided-short-edge">Two-Sided Landscape</option>
-				</select>
-			</li>
-		</ol>
-	</fieldset>
-	<button type="submit">Print!</button>
-	</form>
+    <h2>Printing to {{building|unslugify}}.</h2>
+    <form action="/print" method="post" enctype="multipart/form-data" class="printform" onsubmit="return validate_print_form(this);">
+    <fieldset>
+        <legend>Set Print Options</legend>
+        <ol>
+            <li>
+                <label for="uni">UNI</label>
+                <input type="text" id="uni" name="uni"/>
+                <br />
+                <small>e.g. abc1234</small>
+            </li>
+            <li>
+                <label for="printer">Printer</label>
+                <select id="printer" name="printer">
+                {% for prt in printers %}
+                    <option value="{{prt}}">{{prt}}</option>
+                {% endfor %}
+                </select>
+            </li>
+            <li>
+                <label for="document">File</label>
+                <input type="file" id="document" name="document"/>
+                <br />
+                <small>.pdf or .ps</small>
+            </li>
+            <li>
+                <label for="copies">Copies</label>
+                <input type="text" id="copies" name="copies" value="1"/>
+            </li>
+            <li>
+                <label for="Collate">Collate</label>
+                <input type="checkbox" name="Collate" value="collate"/>
+            </li>
+            <li>
+                <label for="page-ranges">Pages</label>
+                <input type="text" id="page-ranges" name="page-ranges" />
+                <br />
+                <small>e.g. 1-2,5 (leave blank to print all)</small>
+            </li>
+            <li>
+                <label for="sides">Sides</label>
+                <select id="sides" name="sides">
+                    <option value="two-sided-long-edge">Two-Sided Portrait</option>
+                    <option value="one-sided">One-Sided</option>
+                    <option value="two-sided-short-edge">Two-Sided Landscape</option>
+                </select>
+            </li>
+        </ol>
+    </fieldset>
+    <button type="submit">Print!</button>
+    </form>
 {% endblock %}
