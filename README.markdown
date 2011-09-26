@@ -32,6 +32,7 @@ A project to make printing at Columbia University super-duper easy
  - PyCUPS
  - ZeroMQ
  - PyZMQ
+ - Abiword (for .doc/.docx/.odt conversion)
 
 # Usage
 
