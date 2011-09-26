@@ -30,6 +30,8 @@ A project to make printing at Columbia University super-duper easy
 # Dependencies
  - Flask
  - PyCUPS
+ - ZeroMQ
+ - PyZMQ
 
 # Usage
 
