@@ -2,6 +2,11 @@
 
 import sys, os
 import signal
+from importlib import import_module
+
+def runtest(testname):
+	test = import_module('tests.'+testname)
+	test.test()
 
 def runworker(nodaemon=False):
 	from worker import make_socket, work_loop

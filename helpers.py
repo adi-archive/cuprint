@@ -4,8 +4,6 @@ import os
 import zmq
 import json
 
-context = zmq.Context()
-
 def deunicode(obj):
 	if isinstance(obj, dict):
 		retval = {}
@@ -31,6 +29,7 @@ def deunicode(obj):
 		return obj
 
 def connect_to_worker():
+	context = zmq.Context()
 	sender = context.socket(zmq.PUSH)
 	sender.connect(settings.ZMQ_ADDR)
 	
@@ -49,4 +48,5 @@ def send_job(f, form):
 	sender = connect_to_worker()
 	data = json.dumps({'filename': filename, 'tmp_file':tmp_file, 
 		'options':options, 'printer':form['printer'], 'uni':form['uni']})
+	print('sending job')
 	sender.send('print '+data)
