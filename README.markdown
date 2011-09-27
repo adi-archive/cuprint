@@ -17,16 +17,22 @@ A project to make printing at Columbia University super-duper easy
 
 # Current Status
 
- - Basic functionality implemented. 
  - Can specify printer and UNI.
  - Can enter # of copies and page ranges.
  - Double sided printing
- - Only supports file formats supported natively by CUPS 
-   (i.e. PostScript, PDF, and Image Formats).
+ - Can print the following file formats 
+ 	- Portable Document Format (.pdf)
+	- PostScript (.ps)
+	- Open Document Text (.odt)
+	- Word 97-2003 Document (.doc)
+	- Office Open XML Document (.docx)
 
 # Dependencies
  - Flask
  - PyCUPS
+ - ZeroMQ
+ - PyZMQ
+ - Abiword (for .doc/.docx/.odt conversion)
 
 # Usage
 

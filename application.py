@@ -1,7 +1,7 @@
 from flask import Flask, session, request, render_template, redirect
 import settings
 from filters import filters
-from helpers import *
+from helpers import send_job
 import os
 import cups
 import sys
@@ -22,10 +22,9 @@ def print_form(building):
 @app.route('/print', methods=['POST'])
 def handle_print():
 	f = request.files['document']
-	if print_file(f, request.form):
-		return render_template('success.html', 
+	send_job(f, request.form)
+	return render_template('success.html', 
 			printer=request.form['printer'])
-	else: redirect('failure.html')
 
 @app.route('/help')
 def show_help():

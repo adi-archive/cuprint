@@ -1,9 +1,41 @@
 import settings
-import cups
 from werkzeug import secure_filename
 import os
+import zmq
+import json
 
-def print_file(f, form):
+def deunicode(obj):
+	if isinstance(obj, dict):
+		retval = {}
+		for key, val in obj.items():
+			if(isinstance(key, unicode)):
+				key = str(key)
+			if(isinstance(val, unicode)):
+				val = str(val)
+			elif(isinstance(val, (list,dict))):
+				val = deunicode(val)
+			retval[key] = val
+		return retval
+	elif isinstance(obj, list):
+		retval = []
+		for item in obj:
+			if(isinstance(item, unicode)):
+				retval.append(str(item))
+			elif(isinstance(item, (list,dict))):
+				retval.append(deunicode(item))
+			else: retval.append(item)
+		return retval
+	else:
+		return obj
+
+def connect_to_worker():
+	context = zmq.Context()
+	sender = context.socket(zmq.PUSH)
+	sender.connect(settings.ZMQ_ADDR)
+	
+	return sender
+
+def send_job(f, form):
 	filename = secure_filename(f.filename)
 	tmp_file = os.path.join(settings.UPLOAD_DIR, filename)
 	f.save(tmp_file)
@@ -12,10 +44,9 @@ def print_file(f, form):
 		options['Collate'] = 'True'
 	if form['page-ranges']:
 		options['page-ranges'] = str(form['page-ranges'])
-	cups.setUser(form['uni'])
-	conn = cups.Connection()
-	try:
-		return conn.printFile(form['printer'], tmp_file, filename, options)
-	except cups.IPPError:
-		return False
-
+	
+	sender = connect_to_worker()
+	data = json.dumps({'filename': filename, 'tmp_file':tmp_file, 
+		'options':options, 'printer':form['printer'], 'uni':form['uni']})
+	print('sending job')
+	sender.send('print '+data)

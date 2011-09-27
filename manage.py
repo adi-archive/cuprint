@@ -1,13 +1,25 @@
 #!/usr/bin/env python
 
 import sys, os
-from application import app
+import signal
+from importlib import import_module
+
+def runtest(testname):
+	test = import_module('tests.'+testname)
+	test.test()
+
+def runworker(nodaemon=False):
+	from worker import make_socket, work_loop
+	
+	print('Running worker')
+	receiver = make_socket()
+	work_loop(receiver)
 
 def runapp():
+	from application import app
 	'''Start the development server'''
 	app.run()
 	
-
 def genkey():
 	'''Generate a SECRET_KEY'''
 	key = os.urandom(24)
