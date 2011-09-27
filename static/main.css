@@ -201,11 +201,20 @@ form.printform small {
 
 p {line-height: 1.5em;}
 
+form.printform .error {
+  font-size: .6em;
+  color: #fff;
+  background: red;
+  display: inline-block;
+  padding: .25em;
+  margin: 0 0 0 120px;
+}
+
 /* cupid green (inspired by okcupid.com)
 *******************************************************************************/
 button.cupid-blue {
   background-color: rgb(101, 134, 186);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#7fbf4d), to(#63a62f));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(101, 134, 186)), to(rgb(71, 101, 150)));
   /* Saf4+, Chrome */
   background-image: -webkit-linear-gradient(top, rgb(101, 134, 186), rgb(71, 101, 150));
   background-image: -moz-linear-gradient(top, rgb(101, 134, 186), rgb(71, 101, 150));
