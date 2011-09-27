@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% block init %}
 {{super()}}
-<script type="text/javascript" src="/static/validator.js"></script>
 {% endblock %}
 {% block pageid %}printer{% endblock %}
 {% block body %}
-    <h2>Printing to {{building|unslugify}}.</h2>
-    <form action="/print" method="post" enctype="multipart/form-data" class="printform" onsubmit="return validate_print_form(this);">
+    <h2>Printing to {{building|unslugify}}</h2>
+    <form action="/print" method="post" enctype="multipart/form-data" class="printform" id="print_form">
     <fieldset>
         <legend>Set Print Options</legend>
         <ol>
@@ -54,6 +53,6 @@
             </li>
         </ol>
     </fieldset>
-    <button type="submit">Print!</button>
+    <button type="submit" class="cupid-blue">Print!</button>
     </form>
 {% endblock %}

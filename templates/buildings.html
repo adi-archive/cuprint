@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block pageid %}buildings{% endblock %}
 {% block body %}
-	<h2>Choose a building.</h2>
+	<h2>Choose a building</h2>
     <ul id="buildings">
 	{% for building in buildings %}
 		<li><a href="{{building|slugify}}/print">{{building}}</a></li>

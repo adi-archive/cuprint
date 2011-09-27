@@ -21,7 +21,7 @@ PRINTERS={
 		"hammer100b", "hammer100c", "hammer100d", "hammer100e", "hammer100f", 
 		"hammer200a", "hammer200b", "hammer200c", "hammer200d", "hammer200e", 
 		"hammer200f", "hammer200g", "bard100a", "bdh100b", "tw2100a"], 
-	"international-affairs": ["iab323color", "iab323a", "iab323b", "iab215a", 
+	"intl-affairs": ["iab323color", "iab323a", "iab323b", "iab215a", 
 		"iab309a", "iab310a", "iab329a"], "career-services": ["ccsa"], 
 	"watson": ["watson8", "watson811a"], 
 	"social-work": ["socialwork202a", "socialwork207a", "socialwork105a", 
@@ -40,7 +40,7 @@ PRINTERS={
 }
 
 BUILDINGS=['Avery', 'Barnard', 'Burke', 'Butler', 'Career Services', 'Dodge', 
-	'International Affairs', 'Kent', 'Lerner', 'Lewisohn', 'Math', 
+	'Int\'l Affairs', 'Kent', 'Lerner', 'Lewisohn', 'Math', 
 	'Medical Center', 'Mudd', 'Philosophy', 'Residence Halls', 'Schermerhorn', 
 	'Social Work', 'Statistics', 'Uris', 'Watson']
 
