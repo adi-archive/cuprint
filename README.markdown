@@ -37,3 +37,5 @@ A project to make printing at Columbia University super-duper easy
 # Usage
 
  - To start the server, use `./manage.py runapp`. 
+ - To run the worker, use `./manage.py runworker`.
+
