@@ -9,7 +9,7 @@ cuprint.validate_print_form = function() {
 		return false;
 	}
 
-	var filere = /\.(pdf)|(ps)/;
+	var filere = /\.(pdf)|(ps)|(doc)|(docx)|(odt)/;
 	if (!this.document.value.match(filere)) {
 		cuprint.show_document_error();
 		return false;
