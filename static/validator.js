@@ -1,5 +1,10 @@
 var cuprint = {};
 
+cuprint.valid_types = ['odt', 'doc', 'docx', 'rtf',
+						'pdf', 'ps',
+						'odp', 'ppt', 'pptx',
+						'ods', 'csv', 'xls', 'xlsx'];
+
 cuprint.validate_print_form = function() {
 	//individual functions
 	//inline errors, in order
@@ -9,8 +14,10 @@ cuprint.validate_print_form = function() {
 		return false;
 	}
 
-	var filere = /\.(pdf)|(ps)|(doc)|(docx)|(odt)|(rtf)|(xls)|(xlsx)|(ods)|(csv)/;
-	if (!this.document.value.match(filere)) {
+	var ind = this.document.value.lastIndexOf('.');
+	var ext = this.document.value.substr(ext);
+
+	if (cuprint.valid_types.indexOf(ext) == -1) {
 		cuprint.show_document_error();
 		return false;
 	}
