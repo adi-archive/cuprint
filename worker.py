@@ -6,40 +6,19 @@ import sys
 import json
 from helpers import deunicode
 
-def convert_document(filename):
-	newfilename = filename.rsplit('.',1)[0]+'.ps'
-	cmd = 'abiword --to=ps --to-name="%s" "%s"' % (newfilename, filename)
-	os.system(cmd)
-	if os.path.isfile(newfilename):
-		return newfilename
-	return None
-
-def convert_spreadsheet(filename):
-	newfilename = filename.rsplit('.', 1)[0]+'.pdf'
-	cmd = 'ssconvert %s %s' % (filename, newfilename)
-	os.system(cmd)
-	if os.path.isfile(newfilename):
-		return newfilename
-	return None
-
-FORMAT_CONVERTERS = (
-	(('doc', 'docx', 'odt', 'rtf'), convert_document),
-	(('xls', 'xlsx', 'ods', 'csv'), convert_spreadsheet),
-	(('pdf', 'ps'), None)
-)
-
 def convert_file(filename):
 	if '.' in filename:
-		ext = filename.rsplit('.', 1)[1]
-		for (exts, converter) in FORMAT_CONVERTERS:
-			if ext in exts:
-				if converter:
-					newfilename = converter(filename)
-					if newfilename:
-						return newfilename
-					return None
-				return filename
-		return None
+		basename, ext = os.path.splitext(filename)
+		ext = ext[1:]
+		if ext in settings.DIRECT_PRINT_FORMATS:
+			return filename
+		if ext in settings.CONVERTABLE_FORMATS:
+			newname = basename + '.pdf'
+			cmd = 'unoconv %s %s' % (filename, newname)
+			print cmd
+			os.system(cmd)
+			if os.path.isfile(newname):
+				return newname
 	return None
 
 def print_file(filename, tmp_file, printer, uni, options):

@@ -54,3 +54,6 @@ if not os.path.isdir(UPLOAD_DIR):
 ZMQ_ADDR='tcp://127.0.0.1:5555'
 
 DIRECT_PRINT_FORMATS = ['pdf', 'ps']
+CONVERTABLE_FORMATS = ['odt', 'doc', 'docx', 'rtf', 
+						'xls', 'csv', 'xlsx', 'ods',
+						'ppt', 'pptx', 'odp']
