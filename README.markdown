@@ -29,11 +29,12 @@ A project to make printing at Columbia University super-duper easy
 	- Office Open XML Document (.docx)
 
 # Dependencies
- - Flask
- - PyCUPS
- - ZeroMQ
- - PyZMQ
- - Abiword (for .doc/.docx/.odt conversion)
+ - Flask (web interface)
+ - PyCUPS (printing)
+ - ZeroMQ (message passing)
+ - PyZMQ (message passing)
+ - Libreoffice/Openoffice (for file conversion)
+ - Unoconv (for file conversion)
 
 # Usage
 
