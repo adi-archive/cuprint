@@ -13,9 +13,9 @@ cuprint.validate_print_form = function() {
 		cuprint.show_uni_error();
 		return false;
 	}
-
+	
 	var ind = this.document.value.lastIndexOf('.');
-	var ext = this.document.value.substr(ext);
+	var ext = this.document.value.substr(ind+1);
 
 	if (cuprint.valid_types.indexOf(ext) == -1) {
 		cuprint.show_document_error();
