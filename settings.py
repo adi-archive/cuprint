@@ -1,6 +1,5 @@
 # Flask builtins
 DEBUG=True
-# Generate this with ./manage.py genkey
 
 PRINTERS={
 	"dodge": ["dodgeart701a", "dodgeart701b", "dodgeart412a"], 
