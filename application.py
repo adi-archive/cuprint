@@ -22,9 +22,9 @@ def print_form(building):
 @app.route('/print', methods=['POST'])
 def handle_print():
 	f = request.files['document']
-	send_job(f, request.form)
+	preview_url = send_job(f, request.form)
 	return render_template('success.html', 
-			printer=request.form['printer'])
+			printer=request.form['printer'], preview_url=preview_url)
 
 @app.route('/help')
 def show_help():
