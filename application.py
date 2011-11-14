@@ -22,9 +22,9 @@ def print_form(building):
 @app.route('/print', methods=['POST'])
 def handle_print():
 	f = request.files['document']
-	send_job(f, request.form)
+	preview_url = send_job(f, request.form)
 	return render_template('success.html', 
-			printer=request.form['printer'])
+			printer=request.form['printer'], preview_url=preview_url)
 
 @app.route('/help')
 def show_help():
@@ -37,5 +37,11 @@ def show_contact():
 @app.route('/terms')
 def show_terms():
 	return render_template('terms.html')
-	
+
+if app.config['DEBUG']:
+	from werkzeug import SharedDataMiddleware
+	app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
+		'/tmp': app.config['UPLOAD_DIR']
+	})
+
 application=app
