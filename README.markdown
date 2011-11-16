@@ -24,9 +24,9 @@ A project to make printing at Columbia University super-duper easy
  - Can print the following file formats 
  	- Portable Document Format (.pdf)
 	- PostScript (.ps)
-	- Open Document Text (.odt)
-	- Word 97-2003 Document (.doc)
-	- Office Open XML Document (.docx)
+	- Open Document Formats (.odt,.odp,ods)
+	- Microsoft Office 97-2003 Formats (.doc, .xls, .ppt)
+	- Office Open XML Formats (.docx, .xlsx, .pptx)
 
 # Dependencies
  - Flask (web interface)
