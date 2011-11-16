@@ -1,0 +1,4 @@
+Flask
+PyZMQ
+cups
+gunicorn
