@@ -14,8 +14,7 @@ def convert_file(filename):
 			return filename
 		if ext in settings.CONVERTABLE_FORMATS:
 			newname = basename + '.pdf'
-			cmd = 'unoconv %s %s' % (filename, newname)
-			print cmd
+			cmd = 'unoconv -f pdf %s' % filename
 			os.system(cmd)
 			if os.path.isfile(newname):
 				return newname
