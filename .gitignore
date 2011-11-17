@@ -6,3 +6,4 @@
 *.pid
 *.out
 build/
+printenv
