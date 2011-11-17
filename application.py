@@ -1,7 +1,7 @@
 from flask import Flask, session, request, render_template, redirect
 import settings
 from filters import filters
-from helpers import send_job
+from helpers import send_job, get_preview_url
 import os
 import cups
 import sys
@@ -22,7 +22,8 @@ def print_form(building):
 @app.route('/print', methods=['POST'])
 def handle_print():
 	f = request.files['document']
-	preview_url = send_job(f, request.form)
+	send_job(f, request.form)
+	preview_url = get_preview_url(f.filename)
 	return render_template('success.html', 
 			printer=request.form['printer'], preview_url=preview_url)
 

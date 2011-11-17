@@ -5,6 +5,7 @@ import zmq
 import json
 
 def get_preview_url(filename):
+	filename = secure_filename(filename)
 	base, ext = os.path.splitext(filename)
 	if ext in settings.DIRECT_PRINT_FORMATS:
 		return '/tmp/'+filename
@@ -56,4 +57,3 @@ def send_job(f, form):
 		'options':options, 'printer':form['printer'], 'uni':form['uni']})
 	print('sending job')
 	sender.send('print '+data)
-	return get_preview_url(filename)
