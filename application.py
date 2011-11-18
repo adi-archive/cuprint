@@ -12,7 +12,8 @@ app.jinja_env.filters.update(filters)
 
 @app.route('/')
 def index():
-	return render_template('buildings.html', buildings=app.config['BUILDINGS'])
+	return render_template('buildings.html', buildings=app.config['BUILDINGS'],
+			special_buildings=app.config['SPECIAL_BUILDINGS'])
 
 @app.route('/<building>/print')
 def print_form(building):

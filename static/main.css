@@ -58,6 +58,7 @@ h1 {
 h2 {
   margin: 0 0 15px 10px;
   text-shadow: #eaeaea 2px 2px 2px;
+  text-align: center;
 }
 
 ul#buildings  {
@@ -78,6 +79,11 @@ ul#buildings li {
   width: 180px;
   padding: 0;
   margin: 0;
+}
+
+ul#buildings li#special {
+  font-weight: bold;
+  font-style:italic
 }
 
 
