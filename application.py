@@ -1,10 +1,12 @@
-from flask import Flask, session, request, render_template, redirect
+from flask import Flask, session, request, render_template, redirect, url_for
 import settings
 from filters import filters
 from helpers import send_job, get_preview_url
 import os
 import cups
 import sys
+from keys import FLASK_SECRET_KEY
+from dropbox_access import authenticate
 
 app = Flask(__name__)
 app.config.from_object(settings)
@@ -28,6 +30,21 @@ def handle_print():
 	return render_template('success.html', 
 			printer=request.form['printer'], preview_url=preview_url)
 
+@app.route('/dropbox')
+def show_dropbox():
+	if 'uid' in session:
+		return(redirect(url_for(show_dropbox_dir)))
+	elif 'uid' in request.args and 'oauth_token' in request.args:
+		session['uid'] = request.args['uid']
+		session['oauth_token'] = request.args['oauth_token']
+		return(redirect('/dropbox/root/'))
+	else:
+		return authenticate()
+
+@app.route('/dropbox/<path:dropbox_path>')
+def show_dropbox_dir(dropbox_path):
+	return dropbox_path
+
 @app.route('/help')
 def show_help():
 	return render_template('help.html')
@@ -47,3 +64,4 @@ if app.config['DEBUG']:
 	})
 
 application=app
+app.secret_key = FLASK_SECRET_KEY
