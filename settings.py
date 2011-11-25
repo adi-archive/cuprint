@@ -37,11 +37,10 @@ PRINTERS={
 
 BUILDINGS=['Avery', 'Barnard', 'Burke', 'Butler', 'Career Services', 
 	'Dodge', 'Int\'l Affairs', 'Kent', 'Lerner', 'Lewisohn', 'Math', 
-	'Medical Center', 'Mudd', 'Philosophy', 'Schermerhorn', 
-	'Social Work', 'Statistics', 'Uris', 'Watson']
+	'Medical Center', 'Mudd', 'Philosophy', 'Residence Halls', 
+	'Schermerhorn', 'Social Work', 'Statistics', 'Uris', 'Watson']
 
-SPECIAL_BUILDINGS=[
-	'Residence Halls']
+SPECIAL_BUILDINGS = set(['Residence Halls'])
 
 import os
 

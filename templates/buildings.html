@@ -4,7 +4,13 @@
 	<h2>Choose a building</h2>
     <ul id="buildings">
 	{% for building in buildings %}
+		{% if building in special_buildings %}
+		<li class="special">
+			<a href="{{building|slugify}}/print">{{building}}</a>
+		</li>
+		{% else %}
 		<li><a href="{{building|slugify}}/print">{{building}}</a></li>
+		{% endif %}
 	{% endfor %}
     </ul>
 {% endblock %}

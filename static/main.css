@@ -81,7 +81,7 @@ ul#buildings li {
   margin: 0;
 }
 
-ul#buildings li#special {
+ul#buildings li.special {
   font-weight: bold;
   font-style:italic
 }
