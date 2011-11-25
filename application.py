@@ -10,6 +10,12 @@ app = Flask(__name__)
 app.config.from_object(settings)
 app.jinja_env.filters.update(filters)
 
+try:
+	import options
+	app.config.from_object(options)
+except ImportError: 
+	pass
+
 @app.route('/')
 def index():
 	return render_template('buildings.html', buildings=app.config['BUILDINGS'],

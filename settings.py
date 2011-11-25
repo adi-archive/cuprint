@@ -1,6 +1,3 @@
-# Flask builtins
-DEBUG=True
-
 PRINTERS={
 	"dodge": ["dodgeart701a", "dodgeart701b", "dodgeart412a"],
 	"residence-halls": ["broadway304a", "carman103a", "carman103b",
