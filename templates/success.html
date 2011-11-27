@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block body %}
-<p>Your file has been sent to {{printer}}.</p>
+<p>Your file is being sent to {{printer}}.</p>
 <p>If the file was converted successfully, you can preview the converted PDF
-that will be sent to the printer from <a href="{{preview_url}}">here</a></p>
+that will be sent to the printer from <a href="{{preview_url}}">here</a>.
+It may take a little time for the document to be converted. If the link
+does not work initially, please wait a few seconds and then try again.</p>
 {% endblock %}

@@ -51,6 +51,10 @@ def send_job(f, form):
 		options['Collate'] = 'True'
 	if form['page-ranges']:
 		options['page-ranges'] = str(form['page-ranges'])
+	if 'sides' in form and form['sides'] == 'two-sided':
+		options['sides'] = 'two-sided-long-edge'
+	else:
+		options['sides'] = 'one-sided'
 	
 	sender = connect_to_worker()
 	data = json.dumps({'filename': filename, 'tmp_file':tmp_file, 
