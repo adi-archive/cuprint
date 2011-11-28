@@ -217,7 +217,7 @@ form.printform .error {
 }
 
 a#herelink {
-  display inline;
+  display: inline;
 }
 
 /* cupid green (inspired by okcupid.com)
