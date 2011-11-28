@@ -121,7 +121,7 @@ h1 a:hover {
   text-shadow: #555 -2px -2px 0;
 }
 
-/* Form styles based on 
+/* Form styles based on
     http://www.alistapart.com/articles/prettyaccessibleforms/
 */
 form.printform {
@@ -214,6 +214,10 @@ form.printform .error {
   display: inline-block;
   padding: .25em;
   margin: 0 0 0 120px;
+}
+
+a#herelink {
+  display inline;
 }
 
 /* cupid green (inspired by okcupid.com)
